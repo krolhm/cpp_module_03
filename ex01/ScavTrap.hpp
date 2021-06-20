@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/15 15:44:19 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/19 14:32:43 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/06/19 16:21:09 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/06/19 16:38:58 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 #include <iostream>
 #include <cstring>
 
-class FragTrap
+class ScavTrap
 {
 	public:
-		FragTrap(std::string name);
-		FragTrap(int const n);
-		FragTrap(FragTrap const & src);
-		~FragTrap();
+		ScavTrap(std::string name);
+		ScavTrap(int const n);
+        ScavTrap(ScavTrap const &src);
+        ~ScavTrap();
 		int rangedAttack(std::string const & target);
 		int meleeAttack(std::string const & target);
 		void takeDamage(unsigned int amount);
@@ -44,7 +44,7 @@ class FragTrap
 		int _ArmorDamageReduction;
 };
 
-std::ostream & operator << (std::ostream & o, FragTrap const & i);
+std::ostream & operator << (std::ostream & o, ScavTrap const & i);
 
 #define RESET "\033[0m"
 #define BOLD "\033[1m"
