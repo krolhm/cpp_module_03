@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/19 16:21:09 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/20 13:38:50 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/06/15 15:44:19 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/06/19 14:32:43 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
 #include <iostream>
 #include <cstring>
 
-class ScavTrap
+class FragTrap
 {
 	public:
-		ScavTrap(std::string name);
-		ScavTrap(int const n);
-        ScavTrap(ScavTrap const &src);
-        ~ScavTrap();
+		FragTrap(std::string name);
+		FragTrap(int const n);
+		FragTrap(FragTrap const & src);
+		~FragTrap();
 		int rangedAttack(std::string const & target);
 		int meleeAttack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+		int vaulthunter_dot_exe(std::string const &target);
 		void getHit() const;
 		void getEnergy() const;
 		int getHealth() const;
 		std::string _Name;
-		void challengeNewcomer();
 
 	private:
 		int _HitPoints;
@@ -44,7 +44,7 @@ class ScavTrap
 		int _ArmorDamageReduction;
 };
 
-std::ostream & operator << (std::ostream & o, ScavTrap const & i);
+std::ostream & operator << (std::ostream & o, FragTrap const & i);
 
 #define RESET "\033[0m"
 #define BOLD "\033[1m"
