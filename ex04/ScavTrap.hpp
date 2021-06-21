@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/19 16:21:43 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/21 15:25:23 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/06/19 16:21:09 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/06/21 14:13:13 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
-#include "NinjaTrap.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main()
+#include <iostream>
+#include <cstring>
+#include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	FragTrap R2D2("R2D2");
-	ScavTrap C3PO("C3PO");
-	ClapTrap BB8("BB8");
-	NinjaTrap K2SO("K2SO");
-	
-	K2SO.ninjaShoeBox(R2D2);
-	K2SO.ninjaShoeBox(C3PO);
-	K2SO.ninjaShoeBox(BB8);
-	K2SO.ninjaShoeBox(K2SO);
-}
+	public:
+		ScavTrap(std::string name);
+		ScavTrap(int const n);
+        ScavTrap(ScavTrap const &src);
+        ~ScavTrap();
+
+		void challengeNewcomer();
+};
+
+std::ostream & operator << (std::ostream & o, ScavTrap const & i);
+
+#endif
