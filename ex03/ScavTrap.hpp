@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 16:21:09 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/21 13:52:39 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/06/21 14:13:13 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,42 +15,19 @@
 
 #include <iostream>
 #include <cstring>
+#include "ClapTrap.hpp"
 
-class ScavTrap
+class ScavTrap : public ClapTrap
 {
 	public:
 		ScavTrap(std::string name);
 		ScavTrap(int const n);
         ScavTrap(ScavTrap const &src);
         ~ScavTrap();
-		int rangedAttack(std::string const & target);
-		int meleeAttack(std::string const & target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-		void getHit() const;
-		void getEnergy() const;
-		int getHealth() const;
-		std::string _Name;
-		void challengeNewcomer();
 
-	private:
-		int _HitPoints;
-		int _MaxHitPoints;
-		int _EnergyPoints;
-		int _MaxEnergyPoints;
-		int _Level;
-		int _MeleeAttackDamage;
-		int _RangedAttackDamage;
-		int _ArmorDamageReduction;
+		void challengeNewcomer();
 };
 
 std::ostream & operator << (std::ostream & o, ScavTrap const & i);
-
-#define RESET "\033[0m"
-#define BOLD "\033[1m"
-#define RED "\033[31m"
-#define GREEN "\033[32m"
-#define BLUE "\033[34m"
-#define PINK "\033[35m"
 
 #endif

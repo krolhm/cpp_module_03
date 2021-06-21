@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/15 15:44:19 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/21 13:58:19 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/06/21 14:12:41 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/06/21 14:13:49 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef NINJATRAP_HPP
+# define NINJATRAP_HPP
 
 #include <iostream>
 #include <cstring>
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class NinjaTrap : public ClapTrap
 {
 	public:
-		FragTrap(std::string name);
-		FragTrap(int const n);
-		FragTrap(FragTrap const & src);
-		~FragTrap();
+		NinjaTrap(std::string name);
+        NinjaTrap(int const n);
+        NinjaTrap(NinjaTrap const &src);
+        ~NinjaTrap();
 
-		int vaulthunter_dot_exe(std::string const &target);
 };
 
-std::ostream & operator << (std::ostream & o, FragTrap const & i);
+std::ostream & operator << (std::ostream & o, NinjaTrap const & i);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 15:44:09 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/20 13:18:39 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/06/20 14:27:29 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ FragTrap::FragTrap(std::string name) : _Name(name), _HitPoints(100), _MaxHitPoin
 	std::cout << BOLD << GREEN << _Name << ": Séquence d'initiation terminée.\
  Bonjour, je suis votre nouveau robot multifonction.\
  Nom : " << _Name << ". Niveau: " << _Level << ". Energie Max: " << _MaxEnergyPoints
- << ". Robot d'Hyperion classe F. Veuillez régler\
+ << ". Robot d'Hyperion classe F type FR4G-TP. Veuillez régler\
  les paramètres d'usine en fonction de vos besoins avant déploiement."
  << RESET << std::endl;
 	srand(time(0));

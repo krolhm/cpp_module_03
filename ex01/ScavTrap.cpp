@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 16:21:07 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/20 14:15:11 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/06/21 13:54:56 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ScavTrap::ScavTrap(std::string name) : _Name(name), _HitPoints(100), _MaxHitPoin
  Bonjour, je suis votre nouveau robot de porte.\
  Nom : " << _Name
 			  << ". Niveau: " << _Level << ". Energie Max: " << _MaxEnergyPoints
-			  << ". Robot d'Hyperion classe S. Veuillez régler\
+			  << ". Robot d'Hyperion classe S type SC4V-TP. Veuillez régler\
  les paramètres d'usine en fonction de vos besoins avant déploiement."
 			  << RESET << std::endl;
 	srand(time(0));
@@ -108,4 +108,10 @@ void ScavTrap::challengeNewcomer()
  que lui dit-il ?"};
 	std::cout << BOLD << RED << _Name << randChallenge[random]
 			  << RESET << std::endl;
+}
+
+std::ostream &operator<<(std::ostream &o, ScavTrap const &ScavTrap)
+{
+	o << ScavTrap.getHealth();
+	return o;
 }
