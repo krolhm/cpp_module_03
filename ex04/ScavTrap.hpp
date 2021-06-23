@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 16:21:09 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/21 14:13:13 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/06/23 11:27:50 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <cstring>
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	public:
 		ScavTrap(std::string name);
@@ -26,6 +26,7 @@ class ScavTrap : public ClapTrap
         ~ScavTrap();
 
 		void challengeNewcomer();
+		ScavTrap &operator=(ScavTrap const &rhs);
 };
 
 std::ostream & operator << (std::ostream & o, ScavTrap const & i);

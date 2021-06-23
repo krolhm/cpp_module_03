@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 14:21:00 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/21 15:26:36 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/06/23 11:30:57 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ ClapTrap::ClapTrap(int const n) : _HitPoints(n)
 
 ClapTrap::ClapTrap(ClapTrap const &src)
 {
-    *this = src;
+	*this = src;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << GREEN << BOLD << _Name << ": Destruction du ClapTrap..."
-              << RESET << std::endl;
+	std::cout << GREEN << BOLD << _Name << ": Destruction du ClapTrap..."
+			  << RESET << std::endl;
 }
 
 int ClapTrap::getHealth() const
@@ -94,8 +94,22 @@ void ClapTrap::beRepaired(unsigned int amount)
 			  << " points de vie." << RESET << std::endl;
 }
 
-std::ostream &operator<<(std::ostream &o, ClapTrap const &ClapTrap)
+ClapTrap &ClapTrap::operator=(const ClapTrap &rhs)
 {
-	o << ClapTrap.getHealth();
+	_HitPoints = rhs._HitPoints;
+	_MaxHitPoints = rhs._MaxHitPoints;
+	_EnergyPoints = rhs._EnergyPoints;
+	_MaxEnergyPoints = rhs._MaxEnergyPoints;
+	_Level = rhs._Level;
+	_MeleeAttackDamage = rhs._MeleeAttackDamage;
+	_RangedAttackDamage = rhs._RangedAttackDamage;
+	_ArmorDamageReduction = rhs._ArmorDamageReduction;
+	_Name = rhs._Name;
+	return *this;
+}
+
+std::ostream &operator<<(std::ostream &o, ClapTrap const &i)
+{
+	o << i.getHealth();
 	return o;
 }

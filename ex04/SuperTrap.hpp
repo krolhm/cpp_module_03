@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/19 16:21:43 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/23 11:42:55 by rbourgea         ###   ########.fr       */
+/*   Created: 2021/06/21 19:17:15 by rbourgea          #+#    #+#             */
+/*   Updated: 2021/06/23 11:25:52 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SUPERTRAP_HPP
+# define SUPERTRAP_HPP
+
+#include <iostream>
+#include <cstring>
+#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include "NinjaTrap.hpp"
-#include "SuperTrap.hpp"
 
-int main()
+class SuperTrap : virtual public ClapTrap, public NinjaTrap, public FragTrap
 {
-	SuperTrap R2D2("R2D2");
-	FragTrap BB8("BB8");
+	public:
+		SuperTrap();
+		SuperTrap(std::string name);
+		SuperTrap(int const n);
+		SuperTrap(const SuperTrap & src);
+		~SuperTrap(void);
 
-	R2D2.meleeAttack("K2SO");
-	R2D2.rangedAttack("BB8");
-}
+		SuperTrap &operator=(const SuperTrap &rhs);
+};
+
+#endif

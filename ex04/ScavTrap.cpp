@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/19 16:21:07 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/21 14:08:01 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/06/23 11:28:34 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,18 @@ std::ostream &operator<<(std::ostream &o, ScavTrap const &ScavTrap)
 {
 	o << ScavTrap.getHealth();
 	return o;
+}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &rhs)
+{
+	_HitPoints = rhs._HitPoints;
+	_MaxHitPoints = rhs._MaxHitPoints;
+	_EnergyPoints = rhs._EnergyPoints;
+	_MaxEnergyPoints = rhs._MaxEnergyPoints;
+	_Level = rhs._Level;
+	_MeleeAttackDamage = rhs._MeleeAttackDamage;
+	_RangedAttackDamage = rhs._RangedAttackDamage;
+	_ArmorDamageReduction = rhs._ArmorDamageReduction;
+	_Name = rhs._Name;
+	return *this;
 }

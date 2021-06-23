@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 14:14:01 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/21 15:21:50 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/06/23 11:46:34 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,22 @@ void NinjaTrap::ninjaShoeBox(NinjaTrap &target)
 	target.beRepaired(20);
 }
 
-std::ostream &operator<<(std::ostream &o, NinjaTrap const &NinjaTrap)
+NinjaTrap &NinjaTrap::operator=(const NinjaTrap &rhs)
 {
-	o << NinjaTrap.getHealth();
+	_HitPoints = rhs._HitPoints;
+	_MaxHitPoints = rhs._MaxHitPoints;
+	_EnergyPoints = rhs._EnergyPoints;
+	_MaxEnergyPoints = rhs._MaxEnergyPoints;
+	_Level = rhs._Level;
+	_MeleeAttackDamage = rhs._MeleeAttackDamage;
+	_RangedAttackDamage = rhs._RangedAttackDamage;
+	_ArmorDamageReduction = rhs._ArmorDamageReduction;
+	_Name = rhs._Name;
+	return *this;
+}
+
+std::ostream &operator<<(std::ostream &o, NinjaTrap const &i)
+{
+	o << i.getHealth();
 	return o;
 }

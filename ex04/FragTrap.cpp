@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 15:44:09 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/21 14:03:38 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/06/23 11:31:37 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,22 @@ int FragTrap::vaulthunter_dot_exe(std::string const &target)
 	return (damage);
 }
 
-std::ostream &operator<<(std::ostream &o, FragTrap const &FragTrap)
+FragTrap &FragTrap::operator=(const FragTrap &rhs)
 {
-	o << FragTrap.getHealth();
+	_HitPoints = rhs._HitPoints;
+	_MaxHitPoints = rhs._MaxHitPoints;
+	_EnergyPoints = rhs._EnergyPoints;
+	_MaxEnergyPoints = rhs._MaxEnergyPoints;
+	_Level = rhs._Level;
+	_MeleeAttackDamage = rhs._MeleeAttackDamage;
+	_RangedAttackDamage = rhs._RangedAttackDamage;
+	_ArmorDamageReduction = rhs._ArmorDamageReduction;
+	_Name = rhs._Name;
+	return *this;
+}
+
+std::ostream &operator<<(std::ostream &o, FragTrap const &i)
+{
+	o << i.getHealth();
 	return o;
 }

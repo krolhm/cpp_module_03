@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 15:44:19 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/21 13:58:19 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/06/23 11:31:53 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,20 @@
 #include <cstring>
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 	public:
+		FragTrap();
 		FragTrap(std::string name);
 		FragTrap(int const n);
 		FragTrap(FragTrap const & src);
 		~FragTrap();
 
 		int vaulthunter_dot_exe(std::string const &target);
+
+		FragTrap &operator=(const FragTrap &rhs);
 };
 
-std::ostream & operator << (std::ostream & o, FragTrap const & i);
+std::ostream &operator<<(std::ostream &o, FragTrap const &i);
 
 #endif
