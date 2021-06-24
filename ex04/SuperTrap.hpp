@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 19:17:15 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/23 11:25:52 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/06/23 14:23:30 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ class SuperTrap : virtual public ClapTrap, public NinjaTrap, public FragTrap
 		~SuperTrap(void);
 
 		SuperTrap &operator=(const SuperTrap &rhs);
+
+		using FragTrap::rangedAttack;
+		using NinjaTrap::meleeAttack;
 };
 
 #endif

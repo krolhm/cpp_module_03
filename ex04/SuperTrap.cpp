@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 19:17:00 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/23 11:46:58 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/06/24 15:15:16 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 SuperTrap::SuperTrap(std::string name) : ClapTrap(name), NinjaTrap(name), FragTrap(name)
 {
-	_HitPoints = 100;
-	_MaxHitPoints = 100;
-	_EnergyPoints = 120;
-	_MaxEnergyPoints = 120;
-	_MeleeAttackDamage = 60;
-	_RangedAttackDamage = 20;
-	_ArmorDamageReduction = 5;
+	_HitPoints = FragTrap::_HitPoints;
+	_MaxHitPoints = FragTrap::_HitPoints;
+	_EnergyPoints = NinjaTrap::_EnergyPoints;
+	_MaxEnergyPoints = NinjaTrap::_MaxEnergyPoints;
+	_MeleeAttackDamage = NinjaTrap::_MeleeAttackDamage;
+	_RangedAttackDamage = FragTrap::_RangedAttackDamage;
+	_ArmorDamageReduction = FragTrap::_ArmorDamageReduction;
 }
 
 SuperTrap::SuperTrap(int const n) : ClapTrap(n), NinjaTrap(n), FragTrap(n)

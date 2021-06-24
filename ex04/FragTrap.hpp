@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 15:44:19 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/23 11:31:53 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/06/23 14:19:13 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ class FragTrap : virtual public ClapTrap
 		FragTrap(int const n);
 		FragTrap(FragTrap const & src);
 		~FragTrap();
-
+		int rangedAttack(std::string const &target);
+		int meleeAttack(std::string const &target);
 		int vaulthunter_dot_exe(std::string const &target);
 
 		FragTrap &operator=(const FragTrap &rhs);

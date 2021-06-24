@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 15:44:09 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/23 11:31:37 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/06/24 15:22:03 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	std::cout << BOLD << GREEN << _Name << ": Séquence d'initiation terminée.\
  Mise à jour ... FragTrap activé."
  << RESET << std::endl;
+	_HitPoints = 100;
+	_MaxHitPoints = 100;
+	_RangedAttackDamage = 20;
+	_ArmorDamageReduction = 5;
 	srand(time(0));
 }
 
@@ -63,6 +67,22 @@ int FragTrap::vaulthunter_dot_exe(std::string const &target)
 		std::cout << BOLD << RED << _Name << ": Je ne peux pas faire ça, il me manque " 
 			<< 25 - _EnergyPoints << " pour activer vaulthunter.exe" << std::endl;
 	return (damage);
+}
+
+int FragTrap::rangedAttack(std::string const &target)
+{
+	std::cout << BOLD << RED << "FR4G-TP " << _Name << " attaque " << target
+			  << " à distance, causant " << _RangedAttackDamage << " points de dégats !"
+			  << RESET << std::endl;
+	return (_RangedAttackDamage);
+}
+
+int FragTrap::meleeAttack(std::string const &target)
+{
+	std::cout << BOLD << RED << "FR4G-TP " << _Name << " attaque " << target
+			  << " en mêlée, causant " << _MeleeAttackDamage << " points de dégats !"
+			  << RESET << std::endl;
+	return (_MeleeAttackDamage);
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &rhs)

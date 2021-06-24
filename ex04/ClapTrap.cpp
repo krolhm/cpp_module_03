@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 14:21:00 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/23 11:30:57 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/06/23 14:30:09 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void ClapTrap::getEnergy() const
 
 int ClapTrap::rangedAttack(std::string const &target)
 {
-	std::cout << BOLD << RED << "SC4V-TP " << _Name << " attaque " << target
+	std::cout << BOLD << RED << "CL4P-TP " << _Name << " attaque " << target
 			  << " à distance, causant " << _RangedAttackDamage << " points de dégats !"
 			  << RESET << std::endl;
 	return (_RangedAttackDamage);
@@ -68,7 +68,7 @@ int ClapTrap::rangedAttack(std::string const &target)
 
 int ClapTrap::meleeAttack(std::string const &target)
 {
-	std::cout << BOLD << RED << "SC4V-TP " << _Name << " attaque " << target
+	std::cout << BOLD << RED << "CL4P-TP " << _Name << " attaque " << target
 			  << " en mêlée, causant " << _MeleeAttackDamage << " points de dégats !"
 			  << RESET << std::endl;
 	return (_MeleeAttackDamage);

@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 14:14:01 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/06/23 11:46:34 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/06/23 14:24:04 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,22 @@ void NinjaTrap::ninjaShoeBox(NinjaTrap &target)
  NinjaTrap detecté... Protocole entraide allié ! Soigne 20"
 			  << " PV !" << RESET << std::endl;
 	target.beRepaired(20);
+}
+
+int NinjaTrap::rangedAttack(std::string const &target)
+{
+	std::cout << BOLD << RED << "N1NJ4-TP " << _Name << " attaque " << target
+			  << " à distance, causant " << _RangedAttackDamage << " points de dégats !"
+			  << RESET << std::endl;
+	return (_RangedAttackDamage);
+}
+
+int NinjaTrap::meleeAttack(std::string const &target)
+{
+	std::cout << BOLD << RED << "N1NJ4-TP " << _Name << " attaque " << target
+			  << " en mêlée, causant " << _MeleeAttackDamage << " points de dégats !"
+			  << RESET << std::endl;
+	return (_MeleeAttackDamage);
 }
 
 NinjaTrap &NinjaTrap::operator=(const NinjaTrap &rhs)
